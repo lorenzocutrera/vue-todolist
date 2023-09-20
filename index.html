@@ -14,7 +14,21 @@
 </head>
 
 <body>
+    <div id="app">
+        <h1>TO DO LIST</h1>
 
+        <input type="text" v-model="newtask">
+        <button @click="addTask">add</button>
+        <ul class="list-group">
+            <li v-for="task in tasks" class="d-flex gap-3 list-group-item">
+                <div>{{task.text}}</div> 
+                <a href="#"  class="delete_task">
+                    <i @click="delete_task" class="fa-sharp fa-solid fa-xmark"></i>
+                </a>
+            </li>
+        </ul>
+
+    </div>
 
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
